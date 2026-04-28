@@ -3,7 +3,7 @@ Summary:	Python bindings for Protocol Buffers
 Summary(pl.UTF-8):	Wiązania Pythona do buforów protokołowych (Protocol Buffers)
 Name:		python3-protobuf
 Version:	7.34.1
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/protobuf/
@@ -44,7 +44,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README.md
-%{py3_sitedir}/google
+%dir %{py3_sitedir}/google
+%{py3_sitedir}/google/__pycache__
+%{py3_sitedir}/google/*.py
 %dir %{py3_sitedir}/google/_upb
 %attr(755,root,root) %{py3_sitedir}/google/_upb/_message.cpython-*.so
 %{py3_sitedir}/google/protobuf
